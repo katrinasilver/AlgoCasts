@@ -8,6 +8,22 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+function fibonacci(n) {
+  if (n <= 2) return 1
+  return fib(n-1) + fib(n-2)
+}
+
+function memoize(fn) {
+  let store = {}
+  return function(...params) {
+    if (store[params]) return store[params]
+
+    let result = fn.apply(this, params)
+    store[params] = result
+    return result
+  }
+}
+
+const fib = memoize(fibonacci)
 
 module.exports = fib;
