@@ -7,6 +7,13 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+  // str = str.replace(/\W/g, '') // use if only spaces are not included
+  // return str.split('').reverse().join('') === str
+
+  for (let i in str) {
+    return str[i] === str[str.length-1]
+  }
+}
 
 module.exports = palindrome;

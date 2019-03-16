@@ -9,17 +9,17 @@ function maxChar(str) {
   let frequent = ''
   let counter = 0
 
-  // let chars = {}
-  // for (let c of str) {
-  //   if(chars[c]) chars[c]++
-  //   else chars[c] = 1
-  // }
+  let chars = {}
+  for (let c of str) {
+    if(chars[c]) chars[c]++
+    else chars[c] = 1
+  }
   
-  let chars = str.split('').reduce((acc, val) => {
-    if (acc[val]) acc[val]++
-    else acc[val] = 1
-    return acc
-  }, {})
+  // let chars = str.split('').reduce((acc, val) => {
+  //   if (acc[val]) acc[val]++
+  //   else acc[val] = 1
+  //   return acc
+  // }, {})
 
   for(let char in chars) {
     if (chars[char] > counter) {
