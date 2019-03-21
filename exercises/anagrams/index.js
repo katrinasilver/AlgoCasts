@@ -10,7 +10,23 @@
 
 function anagrams(stringA, stringB) {
   return strings(stringA) === strings(stringB) 
+
+  // let a = buildMap(stringA)
+  // let b = buildMap(stringB)
+  // if (Object.keys(a).length !== Object.keys(b).length) return false
+  // for (let i in a) {
+  //   if (a[i] !== b[i]) return false
+  // }
+  // return true
 }
+
+// function buildMap(str) {
+//   let map = {}
+//   for (let char of str) {
+//     map[char] = map[char] + 1 || 1
+//   }
+//   return map
+// }
 
 function strings(str) {
   return str.replace(/\W/gi,'').split('').sort().join('')
