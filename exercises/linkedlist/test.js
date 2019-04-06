@@ -319,3 +319,20 @@ describe.skip('for...of loops', () => {
     }).not.toThrow();
   });
 });
+
+describe('reverse', () => {
+  test('reverse the indices of each item in the linkedlist', () => {
+    const l = new List()
+    l.insertLast(1)
+    l.insertLast(2)
+    l.insertLast(3)
+    l.insertLast(4)
+
+    l.reverse()
+
+    expect(l.getAt(0).data).toEqual(4)
+    expect(l.getAt(1).data).toEqual(3)
+    expect(l.getAt(2).data).toEqual(2)
+    expect(l.getAt(3).data).toEqual(1)
+  })
+})
