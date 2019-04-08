@@ -97,7 +97,7 @@ describe('RemoveFirst', () => {
   });
 });
 
-describe.skip('RemoveLast', () => {
+describe('RemoveLast', () => {
   test('RemoveLast removes the last node when list is empty', () => {
     const l = new List();
     expect(() => {
@@ -321,7 +321,7 @@ describe.skip('for...of loops', () => {
 });
 
 describe('reverse', () => {
-  test('reverse the indices of each item in the linkedlist', () => {
+  test('reverse a linked list', () => {
     const l = new List()
     l.insertLast(1)
     l.insertLast(2)
