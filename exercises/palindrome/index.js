@@ -8,7 +8,6 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-  // str = str.replace(/\W/g, '') // use if only spaces are not included
   // return str.split('').reverse().join('') === str
 
   for (let i in str) {
@@ -19,10 +18,11 @@ function palindrome(str) {
   //   return c === str[str.length-i-1]
   // })
 
-  // let arr = str.split('')
-  // return arr.every((c, i) => {
-  //   return c === arr[arr.length-i-1]
-  // })
+  // let reverse = ''
+  // for (let char of str.toLowerCase()) {
+  //   if (/[a-z0-9]/.test(char)) reverse = char + reverse
+  // }
+  // return reverse === str
 }
 
 module.exports = palindrome;
