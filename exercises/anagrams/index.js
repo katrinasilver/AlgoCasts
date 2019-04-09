@@ -8,17 +8,23 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {
-  return strings(stringA) === strings(stringB) 
+// function anagrams(stringA, stringB) {
+//   return strings(stringA) === strings(stringB) 
+// }
 
-  // let a = buildMap(stringA)
-  // let b = buildMap(stringB)
-  // if (Object.keys(a).length !== Object.keys(b).length) return false
-  // for (let i in a) {
-  //   if (a[i] !== b[i]) return false
-  // }
-  // return true
-}
+// function strings(str) {
+//   return str.replace(/\W/gi,'').split('').sort().join('')
+// }
+
+// function anagrams(stringA, stringB) {
+//   let a = buildMap(stringA)
+//   let b = buildMap(stringB)
+//   if (Object.keys(a).length !== Object.keys(b).length) return false
+//   for (let i in a) {
+//     if (a[i] !== b[i]) return false
+//   }
+//   return true
+// }
 
 // function buildMap(str) {
 //   let map = {}
@@ -28,8 +34,21 @@ function anagrams(stringA, stringB) {
 //   return map
 // }
 
-function strings(str) {
-  return str.replace(/\W/gi,'').split('').sort().join('')
+function anagrams(stringA, stringB) {
+  let map = {}
+
+  if (stringA.length !== stringB.length) return false
+
+  for (let char of stringA.toLowerCase()) {
+    map[char] = map[char] + 1 || 1
+  }
+
+  for (let char of stringB.toLowerCase()) {
+    if (!map[char]) return false
+    else map[char]--
+  }
+
+  return true
 }
 
 module.exports = anagrams;
